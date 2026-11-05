@@ -27,3 +27,4 @@ news:2026-11-03
 news:2026-11-04
 watchlist:2026-11-04
 manifest:STRAT-01-9EMA|workshop
+news:2026-11-05
