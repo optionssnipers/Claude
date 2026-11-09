@@ -30,3 +30,4 @@ manifest:STRAT-01-9EMA|workshop
 news:2026-11-05
 news:2026-11-08-pm
 news:2026-11-09-am
+news:2026-11-09-pm
