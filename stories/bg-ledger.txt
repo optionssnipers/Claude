@@ -2,3 +2,4 @@
 2026-11-11-pm|Tokyo|blue-hour skyline from the waterfront with reflections|rising gold arrow and bar-chart sculpture|procedural|seed 8100501 (HD photo not obtained)
 2026-11-12-am|Taipei|skyline from a high rooftop looking over the towers|glowing semiconductor chip|procedural|seed 8100531 (HD photo not obtained)
 2026-11-12-pm|Seattle|rain-slicked night street with lit towers|empty executive office chair sculpture|procedural|seed 8100532 (HD photo not obtained; scene approximated by procedural skyline)
+2026-11-13-am|Dubai|blue-hour skyline from the waterfront with reflections|oil tanker|procedural|seed 8100562 (HD photo not obtained)
