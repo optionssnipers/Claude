@@ -10,3 +10,4 @@
 2026-11-15-pm|Shenzhen|aerial view of the downtown towers|glowing semiconductor chip|procedural|seed 8205354 (HD photo not obtained; Canva not attempted, prior runs returned thumbnails only)
 2026-11-16-am|Boston|skyline under dramatic clouds at dusk|empty executive chair beside glowing semiconductor chip|procedural|seed 8100655 (HD photo not obtained; Canva returned thumbnails only in prior runs, not attempted)
 2026-11-16-pm|Los Angeles|tall towers seen from a busy street with light trails|glowing data-center server racks|procedural|seed 8100656 (HD photo not obtained; Canva returned no usable HD image)
+2026-11-17-am|Seoul|aerial view of the downtown towers|glowing semiconductor wafer|procedural|seed 8100686 (HD photo not attempted; prior Canva runs returned thumbnails only)
