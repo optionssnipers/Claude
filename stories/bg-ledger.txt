@@ -12,3 +12,4 @@
 2026-11-16-pm|Los Angeles|tall towers seen from a busy street with light trails|glowing data-center server racks|procedural|seed 8100656 (HD photo not obtained; Canva returned no usable HD image)
 2026-11-17-am|Seoul|aerial view of the downtown towers|glowing semiconductor wafer|procedural|seed 8100686 (HD photo not attempted; prior Canva runs returned thumbnails only)
 2026-11-17-pm|Amsterdam|skyline from a high rooftop looking over the towers (procedural)|glowing GPU chip with rising gold bar chart|procedural|seed 8100717 (HD photo not attempted; prior Canva runs returned thumbnails only)
+# 2026-11-17: ENGINE CHANGE. Canva HD download is blocked from the sandbox, so photos are not possible. From the next run use news-kit/bgscene.js (8 scene styles x 8 palettes x 16 elements). Record style|pal|element|side|seed per post; n = number of dated ledger lines.
