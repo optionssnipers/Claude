@@ -61,5 +61,5 @@ bars:`${[[50,260],[130,200],[210,130],[290,50]].map(([x,y])=>`<rect x="${x}" y="
 dollar:`<path d="M200 40v320M290 120q-30-50-90-50-80 0-80 60t80 60 80 60-80 60q-60 0-90-50" fill="none" stroke="${A}" stroke-width="22" stroke-linecap="round"/>`};
 const el=E[B.el]||E.chip;const sc=1.35,px=B.side==='L'?20:1080-400*sc-20,py=330;
 h+=`<g transform="translate(${px} ${py}) scale(${sc})" opacity=".72" filter="url(#gl)">${el}</g>`;
-svg.innerHTML=h;
+svg.innerHTML=h;svg.style.filter='hue-rotate('+((B.hue||0))+'deg)';if(B.flip){svg.style.transform='scaleX(-1)'}
 })();

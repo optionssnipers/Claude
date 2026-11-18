@@ -66,5 +66,9 @@ date.textContent=C.date;chip.textContent=C.chip;badge.innerHTML=C.logo;
 hl.innerHTML=C.lines.map(l=>{const r=l[0]==='!';if(r)l=l.slice(1);return '<div class="s'+(r?' r':'')+'">'+l.replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\+(.+?)\+/g,'<em class="g">$1</em>').replace(/~(.+?)~/g,'<em class="rd">$1</em>')+'</div>'}).join('');
 sub.innerHTML=C.sub;
 </script>
-<script>window.BG={style:0,pal:0,seed:1,el:"chip",side:"L"};</script>
+<!-- MANDATORY BACKGROUND RULES (user standing order: no background may ever look the same as or similar to ANY earlier post).
+ 1) Pick style(0-7), pal(0-7), el, side, seed per the task rules, PLUS hue = a random integer 0-359 that differs by at least 40 degrees from the last 10 posts, and flip = true/false (alternate vs the previous post).
+ 2) Render the cover, then run: python3 bgcheck.py <new slide-1.png> /home/claude/wall-street-awards  (copy bgcheck.py from the same news-kit folder). If it prints SIMILAR, change style, pal, hue (and flip/side) and re-render until it prints OK. Never post a cover that is flagged.
+ 3) Record style|pal|hue|flip|el|side|seed in stories/bg-ledger.txt. -->
+<script>window.BG={style:0,pal:0,hue:0,flip:false,seed:1,el:"chip",side:"L"};</script>
 <script src="bgscene.js"></script></body></html>
