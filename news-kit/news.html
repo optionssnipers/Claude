@@ -1,5 +1,6 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>News</title>
 <style>
+@font-face{font-family:'Playfair';font-style:italic;font-weight:900;src:url(fonts/playfair-display-latin-900-italic.woff2)}
 @font-face{font-family:'Inter';font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
 @font-face{font-family:'Archivo Black';src:url(fonts/archivo-black-latin-400-normal.woff2)}
 @font-face{font-family:'Outfit';font-weight:400;src:url(fonts/outfit-latin-400-normal.woff2)}
@@ -39,6 +40,14 @@ h1 span.rd{color:#E63946;font-family:'Inter';font-weight:900}
 .foot{position:absolute;left:76px;right:76px;bottom:50px;display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono';font-size:19px;letter-spacing:.12em}
 .foot b{color:var(--gold)}.foot span{color:#9a9a9a}
 .disc{position:absolute;left:76px;right:76px;bottom:88px;font-family:'JetBrains Mono';font-size:16px;color:#6f6f6f}
+
+h1 span,h1 span.g,h1 span.rd{font-family:'Playfair',serif!important;font-style:italic;font-weight:900;font-size:1.08em;letter-spacing:0;text-transform:none}
+h1 span{color:#F5C842;text-shadow:0 0 28px rgba(245,200,66,.4)}
+h1 span.rd{color:#E63946;text-shadow:0 0 28px rgba(230,57,70,.4)}
+h1 span.g{color:#14D9A0}
+.what b,.box li b,.q .aa b{font-family:'Playfair',serif;font-style:italic;font-weight:900;color:#F5C842;font-size:1.06em}
+.what b{color:#fff}
+.q .qq{letter-spacing:.2px}
 </style></head><body>
 <div class="frame"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
 <div class="top"><div class="kick" id="kick"></div><div class="date" id="date"></div></div>
@@ -46,17 +55,17 @@ h1 span.rd{color:#E63946;font-family:'Inter';font-weight:900}
 <div class="row" id="row"></div>
 <div class="what" id="what"></div>
 <div class="box"><h3 id="bh"></h3><ul id="bl"></ul></div>
-<div class="disc">Educational content only. Not financial advice. Market moves as of the Wed Oct 14, 2026 close.</div>
+<div class="disc">Educational content only. Not financial advice. Market moves as of the Fri Nov 20, 2026 close.</div>
 <div class="foot"><b>OPTIONS SNIPERS UNIVERSITY</b><span>@optionssnipersuniversity</span></div>
 <script>
 const N={
- kick:"NEWS THAT HITS YOUR WALLET", date:"THU OCT 15, 2026",
- h:'NASDAQ <span class="rd">-1.9%</span> IN ONE DAY AS INFLATION HIT TECH',
- sub:"Worst day for stocks since July. Here is what it means for you.",
- tiles:[["NASDAQ","COMPOSITE","-1.9%"],["S&P 500","INDEX","-1.1%"],["NVIDIA","NVDA | OVER 3%","-3%+"]],
- what:"<b>What happened:</b> On Wed Oct 14, the S&P 500 fell 1.1% and the Nasdaq 1.9%, their worst days since July, as chip and AI shares sold off. September inflation (CPI) hit 3.7% a year, above the 3.6% economists expected.",
+ kick:"NEWS THAT HITS YOUR WALLET", date:"FRI NOV 20, 2026",
+ h:'S&P 500 AND DOW CLOSE IN A <span class="rd">CORRECTION</span>',
+ sub:"Seventh straight S&P decline. Here is what it means for you.",
+ tiles:[["S&P 500","CLOSE 6,918","-3.6%"],["NASDAQ","COMPOSITE","-5.1%"],["DOW","CLOSE 48,188","-1.9%"]],
+ what:"<b>What happened:</b> On Fri Nov 20, the S&P 500 fell 3.6% and the Dow 1.9%, each closing more than 10% below its record high as an AI-stock selloff deepened, Reuters reports. The Nasdaq dropped 5.1%.",
  bh:"WHAT IT MEANS FOR YOU",
- bl:["<b>Your portfolio:</b> chip giants like Nvidia sit inside most index funds, so one rough day can show up in many accounts.","<b>Your wallet:</b> hotter inflation could keep rates higher for longer, which may keep loan and card costs up. Nothing changes today.","<b>Your edge:</b> after a calm stretch, one big red day is a reminder to size for volatility, not just direction."]
+ bl:["<b>Your portfolio:</b> index funds hold the big AI names, so a drop like this can show up across many accounts.","<b>Your wallet:</b> markets are pricing in a possible Fed rate hike in December, which could keep loan and card costs high.","<b>Your edge:</b> a correction means 10% off the high, not a forecast. Know your risk before the next swing."]
 };
 kick.textContent=N.kick;date.textContent=N.date;h.innerHTML=N.h;sub.textContent=N.sub;what.innerHTML=N.what;bh.textContent=N.bh;
 row.innerHTML=N.tiles.map(t=>{const neg=String(t[2]).trim().startsWith('-');return `<div class="tile ${neg?'neg':'pos'}"><div class="n ${neg?'neg':''}">${t[2]}</div><div class="t">${t[0]}</div><div class="s">${t[1]}</div></div>`}).join('');

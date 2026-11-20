@@ -1,5 +1,6 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Title</title>
 <style>
+@font-face{font-family:'Playfair';font-style:italic;font-weight:900;src:url(fonts/playfair-display-latin-900-italic.woff2)}
 @font-face{font-family:'Archivo Black';src:url(fonts/archivo-black-latin-400-normal.woff2)}
 @font-face{font-family:'Anton';src:url(fonts/anton-latin-400-normal.woff2)}
 @font-face{font-family:'Inter';font-weight:900;src:url(fonts/inter-latin-900-normal.woff2)}
@@ -36,6 +37,12 @@ body{position:relative;padding:64px 70px 0;color:#fff;
 .ticker b{color:var(--red)}
 .foot{position:absolute;left:70px;right:70px;bottom:26px;display:flex;justify-content:space-between;font-family:'JetBrains Mono';font-weight:700;font-size:17px;letter-spacing:.12em}
 .foot b{color:var(--gold)}.foot span{color:#9a9a9a}
+
+.s{letter-spacing:2px}
+.s em{font-family:'Playfair',serif;font-style:italic;font-weight:900;text-transform:none;font-size:1.04em;letter-spacing:0;padding:0 .04em;color:#F5C842;background:none;text-shadow:0 0 30px rgba(245,200,66,.5),0 5px 0 rgba(0,0,0,.55)}
+.s em.g{font-family:'Playfair',serif;font-style:italic;font-weight:900;text-transform:none;color:#14D9A0;background:none}
+.s em.rd{font-family:'Playfair',serif;font-style:italic;font-weight:900;text-transform:none;color:#E63946;background:none}
+.sub b,.sub b[style]{font-family:'Playfair',serif;font-style:italic;font-weight:900;font-size:1.12em}
 </style></head><body>
 <div class="stripes"></div><div class="stripes b"></div>
 <div class="frame"></div><div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
@@ -51,10 +58,10 @@ body{position:relative;padding:64px 70px 0;color:#fff;
    lines: 2 SENTENCES (each starts on its own line), ALL CAPS, about 3-6 words each. Wrap the 1-2 most important words of each sentence in *asterisks* (bold white serif with gold highlight); use +plus+ for positive words/numbers (green) and ~tildes~ for negative (red). In ticker/sub, +N% shows green and -N% red.
    ticker: 2-3 short verified facts separated by " | ". sub: one line, wrap the key number in <b>. Everything must be true to the sources. */
 const T={
- date:"WED OCT 21, 2026",
- lines:["SPACEX +FLIPPED TO PROFIT+.", "*AI* BEAT *STARLINK*."],
- ticker:"REVENUE +161% | NET INCOME $4.4B | EPS $0.35",
- sub:"After a <b style=\"color:#E63946\">$541M</b> loss in Q2, SpaceX says AI sales hit <b>$7.56B</b>. Here is what it could mean for your wallet."
+ date:"FRI NOV 20, 2026",
+ lines:["SEVEN *STRAIGHT* DOWN DAYS.", "YOUR *INDEX FUND* FELT IT."],
+ ticker:"S&P 500 -3.6% | NASDAQ -5.1% | DOW -1.9%",
+ sub:"Both the S&P 500 and the Dow closed more than <b style=\"color:#E63946\">10%</b> below their record highs, per Reuters."
 };
 date.textContent=T.date;
 hl.innerHTML=T.lines.map(l=>'<div class="s">'+l.replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/\+(.+?)\+/g,'<em class="g">$1</em>').replace(/~(.+?)~/g,'<em class="rd">$1</em>')+'</div>').join('<div class="sep"></div>');
