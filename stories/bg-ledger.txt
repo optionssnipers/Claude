@@ -27,3 +27,4 @@
 2026-11-23-am2|style=5|pal=7|el=chip|side=L|seed=40530166|hue=60|flip=true|engine
 2026-11-23-pm|style=1|pal=4|el=bars|side=R|seed=40530167|hue=118|flip=false|engine
 2026-11-24-am|style=4|pal=0|el=oil|side=L|seed=40530168|hue=200|flip=false|engine
+2026-11-24-close|style=7|pal=3|el=chip|side=R|seed=40530170|hue=89|flip=true|engine
