@@ -14,7 +14,7 @@ def corners(top=True):
 def page(v,logo,cover,fonts='',ICON=''):
     p=f'{B}font-size:18px;line-height:1.55;color:{TXT};margin:0;'
     r=[corners(True)]
-    r.append(f'''<tr><td style="padding:8px 26px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="64" valign="middle"><img src="{logo}" width="52" alt="Options Snipers University" style="display:block;border:0;height:auto;"></td><td valign="middle" style="{H}font-size:19px;letter-spacing:-0.025em;color:#ffffff;line-height:1;">OPTIONS SNIPERS <span style="color:{GOLD};">UNIVERSITY</span><div style="{M}font-size:10px;font-weight:normal;letter-spacing:2px;color:{MUTED};margin-top:7px;">DAILY NEWS THAT HITS YOUR WALLET &nbsp;/&nbsp; {v['DATE']}</div></td></tr></table></td></tr>''')
+    r.append(f'''<tr><td style="padding:8px 26px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="64" valign="middle"><img src="{logo}" width="52" alt="Options Snipers University" style="display:block;border:0;height:auto;"></td><td valign="middle" style="{H}font-size:19px;letter-spacing:-0.025em;color:#ffffff;line-height:1;">OPTIONS SNIPERS <span style="color:{GOLD};">UNIVERSITY</span><div style="{M}font-size:10px;font-weight:normal;letter-spacing:2px;color:{MUTED};margin-top:7px;">DAILY MARKET NEWS &nbsp;/&nbsp; {v['DATE']}</div></td></tr></table></td></tr>''')
     r.append(f'''<tr><td style="padding:24px 26px 18px;"><div style="{B}font-size:15px;color:{MUTED};">Hi {{{{contact.first_name}}}},</div><h1 style="margin:10px 0 0;{H}font-weight:normal;letter-spacing:-0.025em;font-size:34px;line-height:0.98;color:#ffffff;">{v['HEADLINE']}</h1></td></tr>''')
     r.append(sec('01','THE NEWS',f'<p style="{p}">{nl(v["NEWS"])}</p>'))
     r.append(sec('02','THE NUMBERS',f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>{chip(*v["T1"])}{chip(*v["T2"])}{chip(*v["T3"])}</tr></table><p style="{M}font-size:11px;color:{MUTED};margin:10px 4px 0;">{v["NUMNOTE"]}</p>',pad='22px 22px'))
@@ -30,7 +30,7 @@ def page(v,logo,cover,fonts='',ICON=''):
     r.append(f'''<tr><td style="padding:20px 26px 6px;{B}font-size:11px;line-height:1.6;color:#7c7c7c;">Where we got this: {v['SRC']}.<br>This is for learning only.<br>It is not money advice.<br>Trading options is risky and you can lose money.<br><br><strong style="color:{GOLD};">OPTIONS SNIPERS UNIVERSITY</strong> &nbsp;/&nbsp; @optionssnipersuniversity<br>{{{{location.name}}}} · {{{{location.full_address}}}}<br>You get this email because you signed up for our training. <a href="{{{{unsubscribe_link}}}}" style="color:{MUTED};">Unsubscribe</a></td></tr>''')
     r.append(corners(False).replace('padding:10px 10px 0','padding:0 10px 10px'))
     return f'''<!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Options Snipers University Daily</title>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Daily Market News</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">{fonts}</head>
 <body style="margin:0;padding:0;background:{BG};">
 <!-- SUBJECT: {v['SUBJ']} -->

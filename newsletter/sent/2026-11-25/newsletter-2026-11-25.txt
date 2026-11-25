@@ -1,5 +1,5 @@
 OPTIONS SNIPERS UNIVERSITY
-Daily news that hits your wallet | WED NOV 25, 2026
+Daily Market News | WED NOV 25, 2026
 
 Hi {{contact.first_name}},
 

@@ -1,5 +1,5 @@
 OPTIONS SNIPERS UNIVERSITY
-Daily news that hits your wallet | [[DATE]]
+Daily Market News | [[DATE]]
 
 Hi {{contact.first_name}},
 
