@@ -10,7 +10,7 @@ def chip(n,m,c=RED):
 def corners(top=True):
     b='border-top' if top else 'border-bottom'
     return f'<tr><td style="padding:10px 10px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="22" height="22" style="{b}:2px solid {GOLD2};border-left:2px solid {GOLD2};font-size:0;line-height:0;">&nbsp;</td><td>&nbsp;</td><td width="22" height="22" style="{b}:2px solid {GOLD2};border-right:2px solid {GOLD2};font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>'
-def page(v,logo,cover,fonts=''):
+def page(v,logo,cover,fonts='',ICON=''):
     p=f'{B}font-size:18px;line-height:1.55;color:{TXT};margin:0;'
     r=[corners(True)]
     r.append(f'''<tr><td style="padding:8px 26px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="64" valign="middle"><img src="{logo}" width="52" alt="Options Snipers University" style="display:block;border:0;height:auto;"></td><td valign="middle" style="{H}font-size:19px;letter-spacing:-0.025em;color:#ffffff;line-height:1;">OPTIONS SNIPERS <span style="color:{GOLD};">UNIVERSITY</span><div style="{M}font-size:10px;font-weight:normal;letter-spacing:2px;color:{MUTED};margin-top:7px;">DAILY NEWS THAT HITS YOUR WALLET &nbsp;/&nbsp; {v['DATE']}</div></td></tr></table></td></tr>''')
@@ -23,6 +23,7 @@ def page(v,logo,cover,fonts=''):
     qa=''.join(f'<div style="margin-bottom:16px;"><div style="{B}font-size:18px;font-weight:bold;color:{GOLD};">{q}</div><div style="{p}">{a}</div></div>' for q,a in v['QA'])
     r.append(sec('04','QUICK QUESTIONS',qa))
     r.append(f'''<tr><td align="center" style="padding:26px;border-top:1px solid {LINE};background:{PANEL};"><div style="{M}font-size:12px;font-weight:bold;letter-spacing:3px;color:{GOLD};margin-bottom:8px;">[05] &nbsp;YOUR NEXT STEP</div><div style="{B}font-size:17px;color:{TXT};margin-bottom:16px;">{v['CTATEXT']}</div><a href="{v['CTAURL']}" style="display:inline-block;background:{GOLD};color:#0A0A0A;{H}font-size:16px;letter-spacing:-0.01em;text-decoration:none;padding:15px 32px;border-radius:4px;">{v['CTABTN']}</a></td></tr>''')
+    r.append(f'''<tr><td align="center" style="padding:22px 26px 4px;border-top:1px solid {LINE};"><div style="{M}font-size:11px;letter-spacing:3px;color:{MUTED};margin-bottom:12px;">JOIN THE SNIPERS</div><table role="presentation" cellpadding="0" cellspacing="0"><tr><td style="padding:0 10px;" align="center"><a href="https://www.instagram.com/optionssnipersuniversity" style="text-decoration:none;"><img src="{ICON}icon-instagram.png" width="44" height="44" alt="Instagram" style="display:block;border:0;margin:0 auto;"><div style="{M}font-size:11px;color:{GOLD};margin-top:6px;">INSTAGRAM</div></a></td><td style="padding:0 10px;" align="center"><a href="https://www.youtube.com/channel/UCYdhQjWVViYLeouiSkUQpXQ" style="text-decoration:none;"><img src="{ICON}icon-youtube.png" width="44" height="44" alt="YouTube" style="display:block;border:0;margin:0 auto;"><div style="{M}font-size:11px;color:{GOLD};margin-top:6px;">YOUTUBE</div></a></td></tr></table></td></tr>''')
     r.append(f'''<tr><td style="padding:20px 26px 6px;{B}font-size:11px;line-height:1.6;color:#7c7c7c;">Where we got this: {v['SRC']}.<br>This is for learning only. It is not money advice. Trading options is risky and you can lose money.<br><br><strong style="color:{GOLD};">OPTIONS SNIPERS UNIVERSITY</strong> &nbsp;/&nbsp; @optionssnipersuniversity<br>{{{{location.name}}}} · {{{{location.full_address}}}}<br>You get this email because you signed up for our training. <a href="{{{{unsubscribe_link}}}}" style="color:{MUTED};">Unsubscribe</a></td></tr>''')
     r.append(corners(False).replace('padding:10px 10px 0','padding:0 10px 10px'))
     return f'''<!DOCTYPE html>
@@ -45,11 +46,11 @@ ph={'PRE':'[[PREHEADER: one short sentence]]','DATE':'[[DATE]]','ALT':'[[ALT: he
 'T1':('[[T1_NAME]]','[[T1_MOVE]]'),'T2':('[[T2_NAME]]','[[T2_MOVE]]'),'T3':('[[T3_NAME]]','[[T3_MOVE]]'),'NUMNOTE':'[[NUMBERS NOTE]]  Green #06D6A0 = up. Red #E63946 = down.',
 'BUL':['[[MONEY_IDEA_1: a way traders can profit, plain words]]','[[MONEY_IDEA_2: another way]]','[[MONEY_IDEA_3: the risk to know]]'],'QA':[('[[Q1]]','[[A1: 1-2 short sentences]]'),('[[Q2]]','[[A2: 1-2 short sentences]]')],
 'CTATEXT':'[[CTA_TEXT: one friendly sentence]]','CTABTN':'[[BUTTON TEXT]]','CTAURL':'[[CTA_URL]]','SRC':'[[SOURCES]]'}
-open('email-template.html','w').write(page(ph,'osu-logo.png','[[COVER_URL]]'))
+open('email-template.html','w').write(page(ph,'osu-logo.png','[[COVER_URL]]',ICON='https://raw.githubusercontent.com/optionssnipers/wall-street-awards/main/newsletter/'))
 sm={'PRE':'The biggest AI stock sale of the year just dipped. Here is what it means for you.','DATE':'TUE NOV 24, 2026','ALT':'Anthropic fell below its IPO price','HEADLINE':f'Anthropic\'s stock fell {G}below its starting price.</span>',
 'NEWS':'Anthropic is an AI company. It sold its stock to the public at $83 a share. On Tuesday, the stock fell below $83. Nvidia and the Nasdaq went down too.',
 'T1':('ANTHROPIC','-6.5%'),'T2':('NVIDIA','-5.9%'),'T3':('NASDAQ','-1.5%'),'NUMNOTE':'How much each one went down on Tuesday.',
 'BUL':['Bet on the drop. A trader can buy a "put option." It gains value if the stock keeps going down.','Wait for the dip. Some traders watch for the price to stop falling, then buy a "call option" to bet on a bounce back.','Know the risk. Options can lose all the money you put in. Only use money you can afford to lose.'],
 'QA':[('Why did it fall?','People got less excited about AI stocks. Many of them sold.'),('Is this true?','Yes. Two news sources reported the same numbers.')],
 'CTATEXT':'Want to learn how traders look for chances when stocks move?','CTABTN':'WATCH THE EXCLUSIVE CLASS','CTAURL':'https://example.com','SRC':'AP and Reuters'}
-open('sample/preview.html','w').write(page(sm,'../osu-logo.png','cover.jpg',fontcss()))
+open('sample/preview.html','w').write(page(sm,'../osu-logo.png','cover.jpg',fontcss(),ICON='../'))
