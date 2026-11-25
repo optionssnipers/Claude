@@ -1,0 +1,44 @@
+OPTIONS SNIPERS UNIVERSITY
+Daily news that hits your wallet | [[DATE]]
+
+Hi {{contact.first_name}},
+
+[[HEADLINE]]
+
+THE NEWS
+[[One sentence per line.]]
+
+THE NUMBERS
+[[T1_NAME]] [[T1_MOVE]]
+[[T2_NAME]] [[T2_MOVE]]
+[[T3_NAME]] [[T3_MOVE]]
+
+HOW TO MAKE MONEY TODAY
+- [[MONEY_IDEA_1: level or event to watch, with a number]]
+- [[MONEY_IDEA_2: how a trader plays it]]
+- Know the risk. Options can lose all the money you put in. Only use money you can afford to lose.
+
+QUICK QUESTION
+[[Q1]]
+[[A1]]
+
+FROM WASI
+[[WASI NOTE]] Hit reply and tell me what you are watching.
+Wasi Akin
+
+JOIN THE COMMUNITY
+Join our community and learn how to profit from the news. Book a call to get started.
+2,000+ students have learned with us. On the call, we show you your next step.
+Book a call: [[BOOKING_LINK]]
+
+P.S. Not sure where to start? We will point you to your next step. Book your call here: [[BOOKING_LINK]]
+
+Instagram: https://www.instagram.com/optionssnipersuniversity
+YouTube: https://www.youtube.com/channel/UCYdhQjWVViYLeouiSkUQpXQ
+
+Where we got this: [[SOURCES]].
+This is for learning only. It is not money advice. Trading options is risky and you can lose money.
+
+OPTIONS SNIPERS UNIVERSITY | @optionssnipersuniversity
+{{location.name}} · {{location.full_address}}
+You get this email because you signed up for our training. Unsubscribe: {{unsubscribe_link}}
