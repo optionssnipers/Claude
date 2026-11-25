@@ -27,9 +27,9 @@ v={'SUBJ':'Futures sink as the AI selloff spreads','PRE':'Tariff news and a big 
 'NEWS':'U.S. stock futures fell early Wednesday as the AI selloff spread. Nasdaq-100 futures were down more than 2%, per Yahoo Finance and TipRanks. Reports say new tariffs on 16 trading partners are coming.',
 'T1':('NASDAQ FUTURES','-2%+',RED),'T2':('NASDAQ TUE','-1.5%',RED),'T3':('S&amp;P 500 TUE','-0.5%',RED),
 'NUMNOTE':'Tuesday figures are closes. Futures are early signals, not final prices.',
-'BUL':['Watch 8:30 AM ET. The PCE inflation report is due. It is expected to show prices up 0.3% in October and 3.8% from a year ago.','Pick a side. A put option may gain if stocks keep falling. A call option may gain if they bounce. Many traders wait until the report is out.','Know the risk. Options can lose all the money you put in. Only use money you can afford to lose.'],
+'BUL':['Watch 8:30 AM ET. The PCE inflation report is due. It is expected to show prices up 0.3% in October and 3.8% from a year ago.','Pick a side. A put option may gain if stocks keep falling. A call option may gain if they bounce. Many traders wait until the report is out.'],
 'QA':[('Will prices go up because of tariffs?','Reports say new tariffs are coming, but rates and dates are not confirmed. Prices may rise on some imported goods if they go ahead.')],
-'MIDBTN':'BOOK A CALL','NOTE':'Here is how I see it. One red morning does not change the plan. I wait for the report, then I watch my level. Hit reply and tell me what you are watching.',
+'MIDBTN':'BOOK A CALL','NOTE':'Here is how I see it. Two forces are hitting stocks at once. AI hype is cooling. And traders expect the Fed to raise rates in December, per Yahoo Finance and Rallies.ai. Higher rates hit tech stocks first, because their profits come later. That is why the 8:30 AM inflation number can matter more than the tariff headline. I watch how stocks react after the report, not before it. The first move can fade. Hit reply and tell me what you are watching.',
 'CTATEXT':'Join our community and learn how to profit from the news. Book a call to get started.','TRUST':'2,000+ students have learned with us. On the call, we show you your next step.','CTABTN':'BOOK A CALL','CTAURL':'https://www.optionssnipers.ai','PS':'Not sure where to start? We will point you to your next step.','PSLINK':'Book your call here.','SRC':'Yahoo Finance, TipRanks and Rallies.ai'}
 logo='https://raw.githubusercontent.com/optionssnipers/wall-street-awards/main/newsletter/osu-logo.png'
 open(f'/mnt/user-data/outputs/newsletter-{DATE_TAG}.html','w').write(page(v,logo,'',fonts='',ICON=''))
@@ -42,7 +42,7 @@ rep={'[[DATE]]':v['DATE'],'[[HEADLINE]]':'Stock futures are down big before the 
 '[[Q1]]':v['QA'][0][0],'[[A1]]':v['QA'][0][1],'[[WASI NOTE]] Hit reply and tell me what you are watching.':v['NOTE'],
 '[[BOOKING_LINK]]':v['CTAURL'],'[[SOURCES]]':v['SRC']}
 for k,x in rep.items(): t=t.replace(k,x)
-t=t.replace('- Know the risk. Options can lose all the money you put in. Only use money you can afford to lose.','- '+v['BUL'][2])
+t=t.replace('- Know the risk. Options can lose all the money you put in. Only use money you can afford to lose.\n','')
 open(f'/mnt/user-data/outputs/newsletter-{DATE_TAG}.txt','w').write(t)
 open(f'/mnt/user-data/outputs/newsletter-{DATE_TAG}-subject.txt','w').write('SUBJECT: '+v['SUBJ']+'\nPREHEADER: '+v['PRE']+'\n')
 print(re.findall(r'\[\[.*?\]\]',t))
