@@ -22,7 +22,7 @@ QUICK QUESTION
 [[Q1]]
 [[A1]]
 
-FROM WASI
+WASI'S THOUGHTS
 [[WASI NOTE]] Hit reply and tell me what you are watching.
 Wasi Akin
 
