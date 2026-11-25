@@ -1,40 +1,55 @@
-import re
-LOGO='osu-logo.png'
-def sec(label,body,pad='20px 24px'):
-    return f'''<tr><td style="padding:{pad};border-top:1px solid #243040;"><div style="font-family:Impact,'Anton',Arial,sans-serif;font-size:15px;letter-spacing:2px;color:#F5C542;margin-bottom:10px;">{label}</div>{body}</td></tr>'''
-def chip(n,m,c='#E63946'):
-    return f'<td width="33%" style="padding:4px;"><div style="background:#1a222d;border-radius:8px;padding:12px;text-align:center;"><div style="font-size:11px;color:#9aa7b4;">{n}</div><div style="font-size:24px;font-weight:bold;color:{c};">{m}</div></div></td>'
-def page(v,logo,cover):
-    p='font-size:17px;line-height:1.6;color:#d5dde5;margin:0;'
-    rows=[]
-    rows.append(f'''<tr><td style="padding:18px 24px;border-bottom:3px solid #F5C542;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="60"><img src="{logo}" width="48" height="48" alt="Options Snipers University" style="display:block;border:0;"></td><td style="font-family:Impact,'Anton',Arial,sans-serif;font-size:20px;letter-spacing:2px;color:#ffffff;">OPTIONS SNIPERS <span style="color:#F5C542;">UNIVERSITY</span><div style="font-family:Arial,sans-serif;font-size:11px;letter-spacing:2px;color:#9aa7b4;">DAILY NEWS THAT HITS YOUR WALLET &nbsp;|&nbsp; {v['DATE']}</div></td></tr></table></td></tr>''')
-    rows.append(f'<tr><td><img src="{cover}" width="600" alt="{v["ALT"]}" style="display:block;width:100%;height:auto;border:0;"></td></tr>')
-    rows.append(f'''<tr><td style="padding:24px 24px 16px;"><div style="font-size:14px;color:#9aa7b4;">Hi {{{{contact.first_name}}}},</div><h1 style="margin:8px 0 0;font-family:Impact,'Anton',Arial,sans-serif;font-weight:normal;letter-spacing:.5px;font-size:32px;line-height:1.15;color:#ffffff;">{v['HEADLINE']}</h1></td></tr>''')
-    rows.append(sec('1 &nbsp;THE NEWS',f'<p style="{p}">{v["NEWS"]}</p>'))
-    rows.append(sec('2 &nbsp;THE NUMBERS',f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>{chip(*v["T1"])}{chip(*v["T2"])}{chip(*v["T3"])}</tr></table><p style="font-size:12px;color:#7d8996;margin:8px 4px 0;">{v["NUMNOTE"]}</p>',pad='20px 20px'))
-    li=''.join(f'<li style="margin-bottom:8px;">{b}</li>' for b in v['BUL'])
-    rows.append(sec('3 &nbsp;HOW TO MAKE MONEY FROM THIS',f'<ul style="{p}padding-left:22px;">{li}</ul>'))
-    qa=''.join(f'<div style="margin-bottom:14px;"><div style="font-size:17px;font-weight:bold;color:#ffffff;">{q}</div><div style="{p}">{a}</div></div>' for q,a in v['QA'])
-    rows.append(sec('4 &nbsp;QUICK QUESTIONS',qa))
-    rows.append(f'''<tr><td align="center" style="padding:24px;border-top:1px solid #243040;background:#0e131a;"><div style="font-family:Impact,'Anton',Arial,sans-serif;font-size:15px;letter-spacing:2px;color:#F5C542;margin-bottom:6px;">5 &nbsp;YOUR NEXT STEP</div><div style="font-size:16px;color:#d5dde5;margin-bottom:14px;">{v['CTATEXT']}</div><a href="{v['CTAURL']}" style="display:inline-block;background:#F5C542;color:#0b0f14;font-weight:bold;font-size:17px;text-decoration:none;padding:14px 30px;border-radius:8px;">{v['CTABTN']}</a></td></tr>''')
-    rows.append(f'''<tr><td style="padding:18px 24px;background:#080b10;font-size:11px;line-height:1.6;color:#7d8996;">Where we got this: {v['SRC']}.<br>This is for learning only. It is not money advice. Trading options is risky and you can lose money.<br><br><strong style="color:#F5C542;">OPTIONS SNIPERS UNIVERSITY</strong> &nbsp;|&nbsp; @optionssnipersuniversity<br>{{{{location.name}}}} · {{{{location.full_address}}}}<br>You get this email because you signed up for our training. <a href="{{{{unsubscribe_link}}}}" style="color:#9aa7b4;">Unsubscribe</a></td></tr>''')
+import base64
+GOLD='#F5C842'; GOLD2='#D4A437'; BG='#0A0A0A'; PANEL='#141414'; LINE='#3a2f14'; TXT='#E9E9E9'; MUTED='#9a9a9a'; RED='#E63946'; GREEN='#06D6A0'
+H="font-family:'Archivo Black','Arial Black',Arial,sans-serif;"
+B="font-family:'Outfit',Arial,Helvetica,sans-serif;"
+M="font-family:'JetBrains Mono','Courier New',monospace;"
+def sec(n,label,body,pad='22px 26px'):
+    return f'''<tr><td style="padding:{pad};border-top:1px solid {LINE};"><div style="{M}font-size:12px;font-weight:bold;letter-spacing:3px;color:{GOLD};margin-bottom:12px;">[{n}] &nbsp;{label}</div>{body}</td></tr>'''
+def chip(n,m,c=RED):
+    return f'<td width="33%" style="padding:4px;"><div style="background:{PANEL};border:1px solid {LINE};border-radius:6px;padding:12px 6px;text-align:center;"><div style="{M}font-size:11px;letter-spacing:2px;color:{MUTED};">{n}</div><div style="{M}font-size:24px;font-weight:bold;color:{c};">{m}</div></div></td>'
+def corners(top=True):
+    b='border-top' if top else 'border-bottom'
+    return f'<tr><td style="padding:10px 10px 0;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="22" height="22" style="{b}:2px solid {GOLD2};border-left:2px solid {GOLD2};font-size:0;line-height:0;">&nbsp;</td><td>&nbsp;</td><td width="22" height="22" style="{b}:2px solid {GOLD2};border-right:2px solid {GOLD2};font-size:0;line-height:0;">&nbsp;</td></tr></table></td></tr>'
+def page(v,logo,cover,fonts=''):
+    p=f'{B}font-size:18px;line-height:1.55;color:{TXT};margin:0;'
+    r=[corners(True)]
+    r.append(f'''<tr><td style="padding:8px 26px 18px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="64" valign="middle"><img src="{logo}" width="52" alt="Options Snipers University" style="display:block;border:0;height:auto;"></td><td valign="middle" style="{H}font-size:19px;letter-spacing:-0.025em;color:#ffffff;line-height:1;">OPTIONS SNIPERS <span style="color:{GOLD};">UNIVERSITY</span><div style="{M}font-size:10px;font-weight:normal;letter-spacing:2px;color:{MUTED};margin-top:7px;">DAILY NEWS THAT HITS YOUR WALLET &nbsp;/&nbsp; {v['DATE']}</div></td></tr></table></td></tr>''')
+    r.append(f'<tr><td style="padding:0 14px;"><img src="{cover}" width="572" alt="{v["ALT"]}" style="display:block;width:100%;height:auto;border:0;"></td></tr>')
+    r.append(f'''<tr><td style="padding:24px 26px 18px;"><div style="{B}font-size:15px;color:{MUTED};">Hi {{{{contact.first_name}}}},</div><h1 style="margin:10px 0 0;{H}font-weight:normal;letter-spacing:-0.025em;font-size:34px;line-height:0.98;color:#ffffff;">{v['HEADLINE']}</h1></td></tr>''')
+    r.append(sec('01','THE NEWS',f'<p style="{p}">{v["NEWS"]}</p>'))
+    r.append(sec('02','THE NUMBERS',f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>{chip(*v["T1"])}{chip(*v["T2"])}{chip(*v["T3"])}</tr></table><p style="{M}font-size:11px;color:{MUTED};margin:10px 4px 0;">{v["NUMNOTE"]}</p>',pad='22px 22px'))
+    li=''.join(f'<li style="margin-bottom:10px;">{b}</li>' for b in v['BUL'])
+    r.append(sec('03','HOW TO MAKE MONEY FROM THIS',f'<ul style="{p}padding-left:22px;">{li}</ul>'))
+    qa=''.join(f'<div style="margin-bottom:16px;"><div style="{B}font-size:18px;font-weight:bold;color:{GOLD};">{q}</div><div style="{p}">{a}</div></div>' for q,a in v['QA'])
+    r.append(sec('04','QUICK QUESTIONS',qa))
+    r.append(f'''<tr><td align="center" style="padding:26px;border-top:1px solid {LINE};background:{PANEL};"><div style="{M}font-size:12px;font-weight:bold;letter-spacing:3px;color:{GOLD};margin-bottom:8px;">[05] &nbsp;YOUR NEXT STEP</div><div style="{B}font-size:17px;color:{TXT};margin-bottom:16px;">{v['CTATEXT']}</div><a href="{v['CTAURL']}" style="display:inline-block;background:{GOLD};color:#0A0A0A;{H}font-size:16px;letter-spacing:-0.01em;text-decoration:none;padding:15px 32px;border-radius:4px;">{v['CTABTN']}</a></td></tr>''')
+    r.append(f'''<tr><td style="padding:20px 26px 6px;{B}font-size:11px;line-height:1.6;color:#7c7c7c;">Where we got this: {v['SRC']}.<br>This is for learning only. It is not money advice. Trading options is risky and you can lose money.<br><br><strong style="color:{GOLD};">OPTIONS SNIPERS UNIVERSITY</strong> &nbsp;/&nbsp; @optionssnipersuniversity<br>{{{{location.name}}}} · {{{{location.full_address}}}}<br>You get this email because you signed up for our training. <a href="{{{{unsubscribe_link}}}}" style="color:{MUTED};">Unsubscribe</a></td></tr>''')
+    r.append(corners(False).replace('padding:10px 10px 0','padding:0 10px 10px'))
     return f'''<!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Options Snipers University Daily</title></head>
-<body style="margin:0;padding:0;background:#0b0f14;">
-<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#0b0f14;">{v['PRE']}</div>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0f14;"><tr><td align="center" style="padding:16px 8px;">
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#121821;border-radius:12px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;color:#e8edf2;">
-{chr(10).join(rows)}
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Options Snipers University Daily</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Outfit:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">{fonts}</head>
+<body style="margin:0;padding:0;background:{BG};">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:{BG};">{v['PRE']}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{BG};"><tr><td align="center" style="padding:16px 8px;">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:{BG};border:1px solid {GOLD2};color:{TXT};">
+{chr(10).join(r)}
 </table></td></tr></table></body></html>'''
-ph={'PRE':'[[PREHEADER: one short sentence]]','DATE':'[[DATE]]','ALT':'[[ALT: headline]]','HEADLINE':'[[HEADLINE: short and plain]]','NEWS':'[[THE NEWS: 3 short sentences. Who, what, when.]]',
-'T1':('[[T1_NAME]]','[[T1_MOVE]]'),'T2':('[[T2_NAME]]','[[T2_MOVE]]'),'T3':('[[T3_NAME]]','[[T3_MOVE]]'),'NUMNOTE':'[[NUMBERS NOTE: what the numbers are, e.g. Change on Tuesday]]',
+def fontcss():
+    d='/tmp/w/node_modules/@fontsource/'
+    def f(fam,path,w):
+        b=base64.b64encode(open(d+path,'rb').read()).decode()
+        return f"@font-face{{font-family:'{fam}';font-weight:{w};src:url(data:font/woff2;base64,{b}) format('woff2');}}"
+    return '<style>'+f('Archivo Black','archivo-black/files/archivo-black-latin-400-normal.woff2',400)+f('Outfit','outfit/files/outfit-latin-400-normal.woff2',400)+f('Outfit','outfit/files/outfit-latin-700-normal.woff2',700)+f('JetBrains Mono','jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2',400)+f('JetBrains Mono','jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2',700)+'</style>'
+G=f'<span style="color:{GOLD};">'
+ph={'PRE':'[[PREHEADER: one short sentence]]','DATE':'[[DATE]]','ALT':'[[ALT: headline]]','HEADLINE':'[[HEADLINE: short and plain. Wrap the key words in a gold span.]]','NEWS':'[[THE NEWS: 3 short sentences. Who, what, when.]]',
+'T1':('[[T1_NAME]]','[[T1_MOVE]]'),'T2':('[[T2_NAME]]','[[T2_MOVE]]'),'T3':('[[T3_NAME]]','[[T3_MOVE]]'),'NUMNOTE':'[[NUMBERS NOTE]]  Green #06D6A0 = up. Red #E63946 = down.',
 'BUL':['[[MONEY_IDEA_1: a way traders can profit, plain words]]','[[MONEY_IDEA_2: another way]]','[[MONEY_IDEA_3: the risk to know]]'],'QA':[('[[Q1]]','[[A1: 1-2 short sentences]]'),('[[Q2]]','[[A2: 1-2 short sentences]]')],
 'CTATEXT':'[[CTA_TEXT: one friendly sentence]]','CTABTN':'[[BUTTON TEXT]]','CTAURL':'[[CTA_URL]]','SRC':'[[SOURCES]]'}
 open('email-template.html','w').write(page(ph,'osu-logo.png','[[COVER_URL]]'))
-sm={'PRE':'The biggest AI stock sale of the year just dipped. Here is what it means for you.','DATE':'TUE NOV 24, 2026','ALT':'Anthropic fell below its IPO price','HEADLINE':'Anthropic\'s stock fell below its starting price',
+sm={'PRE':'The biggest AI stock sale of the year just dipped. Here is what it means for you.','DATE':'TUE NOV 24, 2026','ALT':'Anthropic fell below its IPO price','HEADLINE':f'Anthropic\'s stock fell {G}below its starting price.</span>',
 'NEWS':'Anthropic is an AI company. It sold its stock to the public at $83 a share. On Tuesday, the stock fell below $83. Nvidia and the Nasdaq went down too.',
 'T1':('ANTHROPIC','-6.5%'),'T2':('NVIDIA','-5.9%'),'T3':('NASDAQ','-1.5%'),'NUMNOTE':'How much each one went down on Tuesday.',
-'BUL':['Bet on the drop: a trader can buy a "put option." It gains value if the stock keeps going down.','Wait for the dip: some traders watch for the price to stop falling, then buy a "call option" to bet on a bounce back.','Know the risk: options can lose all the money you put in. Only use money you can afford to lose.'],
-'QA':[('Why did it fall?','People got less excited about AI stocks, and many of them sold.'),('Is this true?','Yes. Two news sources reported the same numbers.')],
-'CTATEXT':'Want to learn how traders look for chances when stocks move?','CTABTN':'Watch the free class','CTAURL':'https://example.com','SRC':'AP and Reuters'}
-open('sample/preview.html','w').write(page(sm,'../osu-logo.png','cover.jpg'))
+'BUL':['Bet on the drop. A trader can buy a "put option." It gains value if the stock keeps going down.','Wait for the dip. Some traders watch for the price to stop falling, then buy a "call option" to bet on a bounce back.','Know the risk. Options can lose all the money you put in. Only use money you can afford to lose.'],
+'QA':[('Why did it fall?','People got less excited about AI stocks. Many of them sold.'),('Is this true?','Yes. Two news sources reported the same numbers.')],
+'CTATEXT':'Want to learn how traders look for chances when stocks move?','CTABTN':'WATCH THE EXCLUSIVE CLASS','CTAURL':'https://example.com','SRC':'AP and Reuters'}
+open('sample/preview.html','w').write(page(sm,'../osu-logo.png','cover.jpg',fontcss()))
