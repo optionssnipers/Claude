@@ -1,4 +1,4 @@
-# Wasi's voice for "Wasi's Thoughts"
+# Wasi's voice for "Wasi's Wisdom"
 First person, as Wasi Akin. Tactical, military-precision, short declarative sentences. Periods, not em-dashes. No emojis, no motivational filler.
 Sniper language: "Sniper," as the opener, "the tape", "my level", "setup".
 Teaches the why: what the market is pricing, how two forces connect, why one number beats the headline.

@@ -1,0 +1,49 @@
+OPTIONS SNIPERS UNIVERSITY
+Daily Market News | THU NOV 26, 2026
+
+Hi {{contact.first_name}},
+
+Dow erases a 1,100-point drop in a wild reversal.
+
+THE NEWS
+U.S.
+stocks reversed hard on Wednesday.
+The Dow was down more than 1,100 points at its low, per GSM Global News, then closed up 0.3%, per AP and Yahoo Finance.
+The Nasdaq ended down about 0.6%.
+An AI selloff, a hot inflation report and new tariff plans all hit the tape.
+U.S.
+markets are closed today for Thanksgiving.
+
+THE NUMBERS
+DOW WED +0.3%
+S&P 500 WED -0.3%
+NASDAQ WED -0.6%
+
+HOW TO MAKE MONEY TODAY
+- Watch Friday. Markets reopen for a half day and close at 1:00 PM ET, per Yahoo Finance and GSM Global News. Thin volume can make moves jumpy.
+- Study the reversal. Core PCE rose 3.3% from a year ago against 3.2% expected, per Yahoo Finance. Traders also price about a 98% chance of a December Fed rate hike, per Yahoo Finance. Watch how stocks react to that.
+
+QUICK QUESTION
+Why are markets closed today?
+U.S. stock and bond markets are closed for Thanksgiving, per Yahoo Finance. They reopen Friday for a half day.
+
+WASI'S WISDOM
+Sniper, Wednesday was a lesson in the tape. The Dow fell more than 1,100 points, then closed higher. Same day. Same headlines. The number that mattered was the reaction, not the first move. Core PCE came in at 3.3% against 3.2% expected, per Yahoo Finance. Rate-hike odds for December sit near 98%, per the same source. That is what the market is pricing, and it can hit tech first. I do not chase the panic candle. I wait for the data, then I watch who buys the dip. Emotions run the tape. Problem solvers do not panic. They pivot. Hit reply and tell me what you are watching.
+Wasi Akin
+
+JOIN THE COMMUNITY
+Join our community and learn how to profit from the news. Book a call to get started.
+2,000+ students have learned with us. On the call, we show you your next step.
+Book a call: https://www.optionssnipersuniversity.com/book-call-now
+
+P.S. Not sure where to start? We will point you to your next step. Book your call here: https://www.optionssnipersuniversity.com/book-call-now
+
+Instagram: https://www.instagram.com/optionssnipersuniversity
+YouTube: https://www.youtube.com/channel/UCYdhQjWVViYLeouiSkUQpXQ
+
+Where we got this: AP, Yahoo Finance and GSM Global News.
+This is for learning only. It is not money advice. Trading options is risky and you can lose money.
+
+OPTIONS SNIPERS UNIVERSITY | @optionssnipersuniversity
+{{location.name}} · {{location.full_address}}
+You get this email because you signed up for our training. Unsubscribe: {{unsubscribe_link}}
