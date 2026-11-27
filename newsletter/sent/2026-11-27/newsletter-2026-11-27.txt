@@ -1,0 +1,48 @@
+OPTIONS SNIPERS UNIVERSITY
+Daily Market News | FRI NOV 27, 2026
+
+Hi {{contact.first_name}},
+
+Stocks reopen for a half day as tech tries to rebound.
+
+THE NEWS
+U.S.
+stocks reopen today after the Thanksgiving break for a short session that ends at 1:00 PM ET, per TipRanks and Oninvest.
+Futures pointed higher before the open, led by tech, per TipRanks.
+Wednesday was split.
+The Dow closed up 0.3%, while the S&P 500 fell 0.3% and the Nasdaq Composite fell 0.6%, per Zacks and Oninvest.
+A proposal for new tariffs on 14 economies hit AI stocks, per Zacks and Oninvest.
+
+THE NUMBERS
+DOW WED +0.3%
+S&P 500 WED -0.3%
+NASDAQ WED -0.6%
+
+HOW TO MAKE MONEY TODAY
+- Watch the clock. Stocks trade 9:30 AM to 1:00 PM ET today, per TipRanks and Oninvest. Thin volume can make moves jumpy.
+- Study the AI names. Nvidia, Micron and Oracle each fell roughly 4% to 5% on Wednesday after the tariff headlines, per Zacks and Oninvest. Watch whether they bounce or fade.
+
+QUICK QUESTION
+Why is today a short day?
+Stocks close early at 1:00 PM ET the day after Thanksgiving, per TipRanks. Fewer traders are around, so volume is light.
+
+WASI'S WISDOM
+Sniper, today is a half day. Trading runs 9:30 AM to 1:00 PM ET, per TipRanks and Oninvest. Thin volume can make price jump on small orders. Wednesday showed a split tape. The Dow closed higher while the Nasdaq fell, per Zacks and Oninvest. That tells me money is picking spots, not buying everything. I do not chase a gap in a short session. I wait for the data, then I watch the reaction. Emotions run the tape. Problem solvers do not panic. They pivot. Hit reply and tell me what you are watching.
+Wasi Akin
+
+JOIN THE COMMUNITY
+Join our community and learn how to profit from the news. Book a call to get started.
+2,000+ students have learned with us. On the call, we show you your next step.
+Book a call: https://www.optionssnipersuniversity.com/book-call-now
+
+P.S. Not sure where to start? We will point you to your next step. Book your call here: https://www.optionssnipersuniversity.com/book-call-now
+
+Instagram: https://www.instagram.com/optionssnipersuniversity
+YouTube: https://www.youtube.com/channel/UCYdhQjWVViYLeouiSkUQpXQ
+
+Where we got this: TipRanks, Zacks and Oninvest.
+This is for learning only. It is not money advice. Trading options is risky and you can lose money.
+
+OPTIONS SNIPERS UNIVERSITY | @optionssnipersuniversity
+{{location.name}} · {{location.full_address}}
+You get this email because you signed up for our training. Unsubscribe: {{unsubscribe_link}}

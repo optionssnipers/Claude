@@ -4,7 +4,7 @@
 Needs: npm i playwright @fontsource/archivo-black @fontsource/outfit @fontsource/jetbrains-mono in /tmp/sc (done below if missing).
 Repo path: /home/claude/wall-street-awards. DATE_TAG below must be today's YYYY-MM-DD."""
 import os,subprocess
-DATE_TAG='2026-11-26'
+DATE_TAG='2026-11-27'
 if not os.path.exists('/tmp/sc/node_modules/@fontsource'):
     os.makedirs('/tmp/sc',exist_ok=True)
     subprocess.run('cd /tmp/sc && npm i playwright @fontsource/archivo-black @fontsource/outfit @fontsource/jetbrains-mono >/dev/null 2>&1',shell=True)
@@ -22,20 +22,20 @@ def f(fam,path,w):
     b=base64.b64encode(open(d+path,'rb').read()).decode()
     return f"@font-face{{font-family:'{fam}';font-weight:{w};src:url(data:font/woff2;base64,{b}) format('woff2');}}"
 fonts='<style>'+f('Archivo Black','archivo-black/files/archivo-black-latin-400-normal.woff2',400)+f('Outfit','outfit/files/outfit-latin-400-normal.woff2',400)+f('Outfit','outfit/files/outfit-latin-700-normal.woff2',700)+f('JetBrains Mono','jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2',400)+f('JetBrains Mono','jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2',700)+'</style>'
-v={'SUBJ':'Dow erases a 1,100-point drop','PRE':'Markets are closed today. Here is what happened Wednesday.','DATE':'THU NOV 26, 2026','ALT':'Dow recovers from a 1,100-point drop',
-'HEADLINE':f'Dow {G}erases a 1,100-point drop</span> in a wild reversal.',
-'NEWS':'U.S. stocks reversed hard on Wednesday. The Dow was down more than 1,100 points at its low, per GSM Global News, then closed up 0.3%, per AP and Yahoo Finance. The Nasdaq ended down about 0.6%. An AI selloff, a hot inflation report and new tariff plans all hit the tape. U.S. markets are closed today for Thanksgiving.',
+v={'SUBJ':'Stocks reopen for a half day','PRE':'Short session today. Stocks close at 1:00 PM ET.','DATE':'FRI NOV 27, 2026','ALT':'Stocks reopen for a half day',
+'HEADLINE':f'Stocks {G}reopen for a half day</span> as tech tries to rebound.',
+'NEWS':'U.S. stocks reopen today after the Thanksgiving break for a short session that ends at 1:00 PM ET, per TipRanks and Oninvest. Futures pointed higher before the open, led by tech, per TipRanks. Wednesday was split. The Dow closed up 0.3%, while the S&P 500 fell 0.3% and the Nasdaq Composite fell 0.6%, per Zacks and Oninvest. A proposal for new tariffs on 14 economies hit AI stocks, per Zacks and Oninvest.',
 'T1':('DOW WED','+0.3%',GREEN),'T2':('S&amp;P 500 WED','-0.3%',RED),'T3':('NASDAQ WED','-0.6%',RED),
-'NUMNOTE':'Wednesday closing figures, per AP and Yahoo Finance. Markets are closed Thursday.',
-'BUL':['Watch Friday. Markets reopen for a half day and close at 1:00 PM ET, per Yahoo Finance and GSM Global News. Thin volume can make moves jumpy.','Study the reversal. Core PCE rose 3.3% from a year ago against 3.2% expected, per Yahoo Finance. Traders also price about a 98% chance of a December Fed rate hike, per Yahoo Finance. Watch how stocks react to that.'],
-'QA':[('Why are markets closed today?','U.S. stock and bond markets are closed for Thanksgiving, per Yahoo Finance. They reopen Friday for a half day.')],
-'MIDBTN':'BOOK A CALL','NOTE':'Sniper, Wednesday was a lesson in the tape. The Dow fell more than 1,100 points, then closed higher. Same day. Same headlines. The number that mattered was the reaction, not the first move. Core PCE came in at 3.3% against 3.2% expected, per Yahoo Finance. Rate-hike odds for December sit near 98%, per the same source. That is what the market is pricing, and it can hit tech first. I do not chase the panic candle. I wait for the data, then I watch who buys the dip. Emotions run the tape. Problem solvers do not panic. They pivot. Hit reply and tell me what you are watching.',
-'CTATEXT':'Join our community and learn how to profit from the news. Book a call to get started.','TRUST':'2,000+ students have learned with us. On the call, we show you your next step.','CTABTN':'BOOK A CALL','CTAURL':'https://www.optionssnipersuniversity.com/book-call-now','PS':'Not sure where to start? We will point you to your next step.','PSLINK':'Book your call here.','SRC':'AP, Yahoo Finance and GSM Global News'}
+'NUMNOTE':'Wednesday closing figures, per Zacks and Oninvest. Markets were closed Thursday.',
+'BUL':['Watch the clock. Stocks trade 9:30 AM to 1:00 PM ET today, per TipRanks and Oninvest. Thin volume can make moves jumpy.','Study the AI names. Nvidia, Micron and Oracle each fell roughly 4% to 5% on Wednesday after the tariff headlines, per Zacks and Oninvest. Watch whether they bounce or fade.'],
+'QA':[('Why is today a short day?','Stocks close early at 1:00 PM ET the day after Thanksgiving, per TipRanks. Fewer traders are around, so volume is light.')],
+'MIDBTN':'BOOK A CALL','NOTE':'Sniper, today is a half day. Trading runs 9:30 AM to 1:00 PM ET, per TipRanks and Oninvest. Thin volume can make price jump on small orders. Wednesday showed a split tape. The Dow closed higher while the Nasdaq fell, per Zacks and Oninvest. That tells me money is picking spots, not buying everything. I do not chase a gap in a short session. I wait for the data, then I watch the reaction. Emotions run the tape. Problem solvers do not panic. They pivot. Hit reply and tell me what you are watching.',
+'CTATEXT':'Join our community and learn how to profit from the news. Book a call to get started.','TRUST':'2,000+ students have learned with us. On the call, we show you your next step.','CTABTN':'BOOK A CALL','CTAURL':'https://www.optionssnipersuniversity.com/book-call-now','PS':'Not sure where to start? We will point you to your next step.','PSLINK':'Book your call here.','SRC':'TipRanks, Zacks and Oninvest'}
 logo='https://raw.githubusercontent.com/optionssnipers/wall-street-awards/main/newsletter/osu-logo.png'
 open(f'/mnt/user-data/outputs/newsletter-{DATE_TAG}.html','w').write(page(v,logo,'',fonts='',ICON=''))
 open('/tmp/nl/render.html','w').write(page(v,'/home/claude/wall-street-awards/newsletter/osu-logo.png','',fonts=fonts,ICON=''))
 t=open('/home/claude/wall-street-awards/newsletter/email-plain-text.txt').read()
-rep={'[[DATE]]':v['DATE'],'[[HEADLINE]]':'Dow erases a 1,100-point drop in a wild reversal.',
+rep={'[[DATE]]':v['DATE'],'[[HEADLINE]]':'Stocks reopen for a half day as tech tries to rebound.',
 '[[One sentence per line.]]':v['NEWS'].replace('. ','.\n'),
 '[[T1_NAME]] [[T1_MOVE]]':'DOW WED +0.3%','[[T2_NAME]] [[T2_MOVE]]':'S&P 500 WED -0.3%','[[T3_NAME]] [[T3_MOVE]]':'NASDAQ WED -0.6%',
 '[[MONEY_IDEA_1: level or event to watch, with a number]]':v['BUL'][0],'[[MONEY_IDEA_2: how a trader plays it]]':v['BUL'][1],
