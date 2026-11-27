@@ -33,3 +33,4 @@
 2026-11-25-pm|style=4|pal=7|el=chip|side=R|seed=40530190|hue=330|flip=true|engine
 2026-11-26-am|style=6|pal=4|el=port|side=R|seed=40530260|hue=232|flip=false|engine
 2026-11-26-pm|style=3|pal=6|el=oil|side=L|seed=40530300|hue=150|flip=false|engine
+2026-11-27-am|style=0|pal=1|el=bars|side=R|seed=40530173|hue=300|flip=true|engine
